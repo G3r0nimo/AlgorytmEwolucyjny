@@ -24,13 +24,20 @@ namespace StrategiaEwolucyjna
                         var crossoverOperator = new OnePointCrossover(new Random());
                         crossoverOperator.Crossover(z.Chromosome, x.Chromosome);
                         //wynik do listy IndividualsLambda
-                         ///
+                        
                     }
 
                 }
             }
             //lamda na top 5 os z lity zapętlenie pokolenia
+            var lambda = new OnePointCrossover(new Random());
+            var pokolenie = lambda.IndividualsLambda;
+            foreach(var l in pokolenie)
+            {
+             
+              Console.WriteLine("{0} {1}", "OSobnik", l.ToString());
 
+            }
         }
     }
 }

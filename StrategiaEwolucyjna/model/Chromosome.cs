@@ -12,6 +12,7 @@ namespace StrategiaEwolucyjna.model
 
         public double Fenotype
         {
+            set { }
             get
             {
                 return CalculateFenotype();
@@ -25,9 +26,11 @@ namespace StrategiaEwolucyjna.model
                 .ToList();
         }
 
+
         private double CalculateFenotype()
         {
             double wynik = 0;
+
             for (int i = Genes.Count-1, j = 0; i >= 0; i--, j++)
             {
                 wynik += Convert.ToDouble(Genes[i]) * Math.Pow(2, j);

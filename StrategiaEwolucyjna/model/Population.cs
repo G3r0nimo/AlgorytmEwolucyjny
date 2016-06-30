@@ -9,7 +9,7 @@ namespace StrategiaEwolucyjna.model
     class Population
     {
         public List<Individual> Individuals { get; set; }
-        public List<Individual> IndividualsLambda { get; set; }
+        
 
         private Func<double, double> _fitnessFunction;
 
