@@ -24,7 +24,7 @@ namespace StrategiaEwolucyjna
                         var crossoverOperator = new OnePointCrossover(new Random());
                         crossoverOperator.Crossover(z.Chromosome, x.Chromosome);
                         //wynik do listy IndividualsLambda
-                         
+                         ///
                     }
 
                 }
