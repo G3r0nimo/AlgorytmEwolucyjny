@@ -12,22 +12,25 @@ namespace StrategiaEwolucyjna
     {
         static void Main(string[] args)
         {
-            Population populacja = new Population(5, 3, n => n * n, new Random());
-            int i = 0;
-            foreach (var x in populacja.Individuals)
-            {
-                
-                Console.WriteLine("{0} {1} {2}-{3}","Osobnik", i,"posiada współczynnik porzeżycia" ,x.Fitness);
-                i++;
-                //Crossover(x.Chromosome, x.Chromosome);
-                //x.Chromosome.Genes.Count();
-            }
-            for (int j = 0; j <= 50; j++)
-            {
-                //crossover
-            }
+
+            Population populacja = new Population(5, 6, n => n * n, new Random());
             
-            
+            for (int i = 0; i <= 2; i++)
+            {
+                foreach (var z in populacja.Individuals)
+                {
+                    foreach (var x in populacja.Individuals)
+                    {
+                        var crossoverOperator = new OnePointCrossover(new Random());
+                        crossoverOperator.Crossover(z.Chromosome, x.Chromosome);
+                        //wynik do listy IndividualsLambda
+                         
+                    }
+
+                }
+            }
+            //lamda na top 5 os z lity zapętlenie pokolenia
+
         }
     }
 }
