@@ -23,7 +23,6 @@ namespace StrategiaEwolucyjna
                     {
                         var crossoverOperator = new OnePointCrossover(new Random());
                         crossoverOperator.Crossover(z, x);
-                        //wynik do listy IndividualsLambda
                         
                     }
 

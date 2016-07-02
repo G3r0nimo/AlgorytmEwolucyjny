@@ -27,13 +27,10 @@ namespace StrategiaEwolucyjna.crossover
 
 
             int tmp = _random.Next(1, parent2.Chromosome.Genes.Count - 1);
-            //Console.WriteLine($"Random = {tmp}");
-
+         
             for (int i = tmp; i < parent2.Chromosome.Genes.Count; i++)
             {
-                //Console.WriteLine($"{parent1.Genes[i]} na {parent2.Genes[i]}");
-                //bool buffer = parent1.Genes[i];
-                children1.Chromosome.Genes[i] = parent2.Chromosome.Genes[i];
+                 children1.Chromosome.Genes[i] = parent2.Chromosome.Genes[i];
                 children2.Chromosome.Genes[i] = parent1.Chromosome.Genes[i];
                 Count.CalculateFitnes(children1);
                 Count.CalculateFitnes(children2);
