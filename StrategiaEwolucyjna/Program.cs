@@ -22,7 +22,7 @@ namespace StrategiaEwolucyjna
                     foreach (var x in populacja.Individuals)
                     {
                         var crossoverOperator = new OnePointCrossover(new Random());
-                        crossoverOperator.Crossover(z.Chromosome, x.Chromosome);
+                        crossoverOperator.Crossover(z, x);
                         //wynik do listy IndividualsLambda
                         
                     }
@@ -30,14 +30,23 @@ namespace StrategiaEwolucyjna
                 }
             }
             //lamda na top 5 os z lity zapętlenie pokolenia
+
             var lambda = new OnePointCrossover(new Random());
             var pokolenie = lambda.IndividualsLambda;
-            foreach(var l in pokolenie)
-            {
-             
-              Console.WriteLine("{0} {1}", "OSobnik", l.ToString());
+            //foreach(var l in pokolenie)
+            //{
 
+            //  Console.WriteLine("{0} {1}", "OSobnik", l.ToString());
+
+            //}
+            foreach (var item in pokolenie)
+            {
+                Console.WriteLine("test");
+                var x = item.Fitness;
+                Console.WriteLine(x.ToString());
             }
+
+            
         }
     }
 }

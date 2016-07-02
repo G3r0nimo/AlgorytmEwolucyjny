@@ -9,6 +9,6 @@ namespace StrategiaEwolucyjna.crossover
 {
     public interface ICrossoverOperator
     {
-        void Crossover(Chromosome parent1, Chromosome parent2);
+        void Crossover(Individual parent1, Individual parent2);
     }
 }

@@ -39,5 +39,24 @@ namespace StrategiaEwolucyjna.model
 
             return wynik;
         }
+
+    }
+
+
+    public static class Count
+    {
+
+        public static double CalculateFitnes(Individual os)
+        {
+            double wynik = 0.0;
+
+            for (int i = os.Chromosome.Genes.Count - 1, j = 0; i >= 0; i--, j++)
+            {
+                wynik += Convert.ToDouble(os.Chromosome.Genes[i]) * Math.Pow(2, j);
+            }
+           // Console.WriteLine($"x: {wynik}");
+
+            return wynik;
+        }
     }
 }
