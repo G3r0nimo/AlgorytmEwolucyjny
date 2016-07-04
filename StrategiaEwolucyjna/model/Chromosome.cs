@@ -8,7 +8,7 @@ namespace StrategiaEwolucyjna.model
 {
     public class Chromosome
     {
-        public List<bool> Genes { get; set; }
+        public List<double> Genes { get; set; }
 
         public double Fenotype
         {
@@ -21,9 +21,14 @@ namespace StrategiaEwolucyjna.model
 
         public Chromosome(int chromosomeLength, Random random)
         {
-            Genes = Enumerable.Range(0, chromosomeLength)
-                .Select(x => random.NextDouble() <= 0.5)
-                .ToList();
+            //Genes = Enumerable.Range(0, chromosomeLength)
+            //    .Select(x => random.NextDouble() <= 0.5)
+            //    .ToList();
+            foreach (var x in Genes)
+            {
+                random.Next(0, 1).ToString();
+            }
+                    
         }
 
 

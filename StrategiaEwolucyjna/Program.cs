@@ -14,7 +14,7 @@ namespace StrategiaEwolucyjna
         {
 
             Population populacja = new Population(5, 6, n => n * n, new Random());
-            
+
             for (int i = 0; i <= 2; i++)
             {
                 foreach (var z in populacja.Individuals)
@@ -23,7 +23,8 @@ namespace StrategiaEwolucyjna
                     {
                         var crossoverOperator = new OnePointCrossover(new Random());
                         crossoverOperator.Crossover(z, x);
-                        
+                        //wynik do listy IndividualsLambda
+
                     }
 
                 }
@@ -43,9 +44,9 @@ namespace StrategiaEwolucyjna
                 Console.WriteLine("test");
                 var x = item.Fitness;
                 Console.WriteLine(x.ToString());
+                populacja.Individuals.Add(item);
             }
 
-            
         }
     }
 }

@@ -24,7 +24,7 @@ namespace StrategiaEwolucyjna.mutation
             {
                 if (_random.NextDouble() <= _mutationProbability)
                 {
-                    chromosome.Genes[i] = !chromosome.Genes[i];
+                    //chromosome.Genes[i] = !chromosome.Genes[i];
                 }
             }
         }
