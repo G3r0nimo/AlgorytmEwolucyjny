@@ -31,7 +31,7 @@ namespace StrategiaEwolucyjna.crossover
                 children1.Chromosome.Genes[i] = parent1.Chromosome.Genes[i] * k + (1 - k) * parent2.Chromosome.Genes[i];             
                 Count.CalculateFitnes(children1);
             }
-            //List<Chromosome> return2 = return2.Add(children1);
+            \
             IndividualsLambda.Add(new Individual (children1));
        
             
