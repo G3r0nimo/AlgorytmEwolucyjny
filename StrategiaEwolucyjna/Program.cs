@@ -12,15 +12,7 @@ namespace StrategiaEwolucyjna
     {
         public List<Individual> populacja { get; set; }
 
-        static void Main(string[] args)
-        {
-
-            Population populacja = new Population(5, 6, n => n * n, new Random());
-           
-
-        }
-
-        public void Generation(Population fresh)
+        public void Generationv2(Population fresh)
         {
 
             for (int i = 0; i <= 2; i++)
@@ -31,22 +23,27 @@ namespace StrategiaEwolucyjna
                     {
                         var crossoverOperator = new OnePointCrossover(new Random());
                         crossoverOperator.Crossover(z, x);
-                        //wynik do listy IndividualsLambda
                     }
                 }
             }
             var lambda = new OnePointCrossover(new Random());
             var pokolenie = lambda.IndividualsLambda;
 
-            foreach (var item in pokolenie)
+            foreach (var y in pokolenie)
             {
-
-                fresh.Individuals.Add(item);
+                fresh.Individuals.Add(y);
             }
             var top = fresh.Individuals.OrderByDescending(x => x.Fitness).Take(5).ToList();
             populacja.Clear();
             populacja = top;
-            
+
         }
+        static void Main(string[] args)
+        {
+            Population populacja = new Population(5, 6, n => n * n, new Random());
+            Generationv2(populacja);
+        }
+
+        
     }
 }
