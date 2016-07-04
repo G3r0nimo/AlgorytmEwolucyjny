@@ -14,38 +14,34 @@ namespace StrategiaEwolucyjna
         {
 
             Population populacja = new Population(5, 6, n => n * n, new Random());
+            
+            
+        }
+
+        public void Generation(Population fresh)
+        {
 
             for (int i = 0; i <= 2; i++)
             {
-                foreach (var z in populacja.Individuals)
+                foreach (var z in fresh.Individuals)
                 {
-                    foreach (var x in populacja.Individuals)
+                    foreach (var x in fresh.Individuals)
                     {
                         var crossoverOperator = new OnePointCrossover(new Random());
                         crossoverOperator.Crossover(z, x);
                         //wynik do listy IndividualsLambda
-
                     }
-
                 }
             }
-            //lamda na top 5 os z lity zapętlenie pokolenia
-
             var lambda = new OnePointCrossover(new Random());
             var pokolenie = lambda.IndividualsLambda;
-            //foreach(var l in pokolenie)
-            //{
 
-            //  Console.WriteLine("{0} {1}", "OSobnik", l.ToString());
-
-            //}
             foreach (var item in pokolenie)
             {
-                Console.WriteLine("test");
-                var x = item.Fitness;
-                Console.WriteLine(x.ToString());
+
                 populacja.Individuals.Add(item);
             }
+            var top = populacja.Individuals.OrderByDescending(populacja => populacja.Fitness).Take(5);
 
         }
     }

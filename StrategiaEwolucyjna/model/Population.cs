@@ -69,5 +69,6 @@ namespace StrategiaEwolucyjna.model
 
             return result;
         }
+
     }
 }
