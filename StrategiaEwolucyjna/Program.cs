@@ -15,9 +15,9 @@ namespace StrategiaEwolucyjna
         static void Main(string[] args)
         {
 
-            populacja = new Population(5, 6, n => n * n, new Random());
-            
-            
+            Population populacjav2 = new Population(5, 6, n => n * n, new Random());
+           
+
         }
 
         public void Generation(Population fresh)
@@ -44,7 +44,7 @@ namespace StrategiaEwolucyjna
                 fresh.Individuals.Add(item);
             }
             var top = fresh.Individuals.OrderByDescending(x => x.Fitness).Take(5);
-
+            populacja.Add(top);
         }
     }
 }
