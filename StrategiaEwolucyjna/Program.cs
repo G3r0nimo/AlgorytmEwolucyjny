@@ -44,7 +44,8 @@ namespace StrategiaEwolucyjna
                 fresh.Individuals.Add(item);
             }
             var top = fresh.Individuals.OrderByDescending(x => x.Fitness).Take(5).ToList();
-            populacja.Add(top);
+            populacja.Clear();
+            populacja = top;
             
         }
     }
