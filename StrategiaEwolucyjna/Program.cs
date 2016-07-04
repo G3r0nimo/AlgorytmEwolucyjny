@@ -10,12 +10,12 @@ namespace StrategiaEwolucyjna
 {
     class Program
     {
-        public List<Population> populacja { get; set; }
+        public List<Individual> populacja { get; set; }
 
         static void Main(string[] args)
         {
 
-            Population populacjav2 = new Population(5, 6, n => n * n, new Random());
+            Population populacja = new Population(5, 6, n => n * n, new Random());
            
 
         }
@@ -43,8 +43,9 @@ namespace StrategiaEwolucyjna
 
                 fresh.Individuals.Add(item);
             }
-            var top = fresh.Individuals.OrderByDescending(x => x.Fitness).Take(5);
+            var top = fresh.Individuals.OrderByDescending(x => x.Fitness).Take(5).ToList();
             populacja.Add(top);
+            
         }
     }
 }
