@@ -24,11 +24,11 @@ namespace StrategiaEwolucyjna.model
             //Genes = Enumerable.Range(0, chromosomeLength)
             //    .Select(x => random.NextDouble() <= 0.5)
             //    .ToList();
-            foreach (var x in Genes)
+            for (int i = 0; i <chromosomeLength ; i++)
             {
-                random.Next(0, 1).ToString();
+                Genes[i] = random.Next(3);
             }
-                    
+       
         }
 
 

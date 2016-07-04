@@ -22,7 +22,7 @@ namespace StrategiaEwolucyjna.crossover
 
         public void Crossover(Individual parent1, Individual parent2)
         {
-            Individual children1=parent1;
+            Individual children1=null;
 
             int k = _random.Next(0,1);
         
@@ -31,7 +31,7 @@ namespace StrategiaEwolucyjna.crossover
                 children1.Chromosome.Genes[i] = parent1.Chromosome.Genes[i] * k + (1 - k) * parent2.Chromosome.Genes[i];             
                 Count.CalculateFitnes(children1);
             }
-            \
+            
             IndividualsLambda.Add(new Individual (children1));
        
             
