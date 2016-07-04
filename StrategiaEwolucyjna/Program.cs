@@ -15,33 +15,39 @@ namespace StrategiaEwolucyjna
         public void Generationv2(Population fresh)
         {
 
-            for (int i = 0; i <= 2; i++)
-            {
-                foreach (var z in fresh.Individuals)
-                {
-                    foreach (var x in fresh.Individuals)
-                    {
-                        var crossoverOperator = new OnePointCrossover(new Random());
-                        crossoverOperator.Crossover(z, x);
-                    }
-                }
-            }
-            var lambda = new OnePointCrossover(new Random());
-            var pokolenie = lambda.IndividualsLambda;
-
-            foreach (var y in pokolenie)
-            {
-                fresh.Individuals.Add(y);
-            }
-            var top = fresh.Individuals.OrderByDescending(x => x.Fitness).Take(5).ToList();
-            populacja.Clear();
-            populacja = top;
 
         }
         static void Main(string[] args)
         {
             Population populacja = new Population(5, 6, n => n * n, new Random());
-            Generationv2(populacja);
+            int ilosc = 5;//ilosc pokoleń
+            for (int i = 0; i < ilosc; i++)
+            {
+
+                for (int j = 0; j <= 2; i++)
+                {
+                    foreach (var z in populacja.Individuals)
+                    {
+                        foreach (var x in populacja.Individuals)
+                        {
+                            var crossoverOperator = new OnePointCrossover(new Random());
+                            crossoverOperator.Crossover(z, x);
+                        }
+                    }
+                }
+                var lambda = new OnePointCrossover(new Random());
+                var pokolenie = lambda.IndividualsLambda;
+
+                foreach (var y in pokolenie)
+                {
+                    populacja.Individuals.Add(y);
+                }
+                var top = populacja.Individuals.OrderByDescending(x => x.Fitness).Take(5);
+                populacja = null;
+                populacja.Individuals.Add(top);
+                
+            }
+            
         }
 
         
