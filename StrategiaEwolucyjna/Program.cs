@@ -39,9 +39,9 @@ namespace StrategiaEwolucyjna
             foreach (var item in pokolenie)
             {
 
-                populacja.Individuals.Add(item);
+                fresh.Individuals.Add(item);
             }
-            var top = populacja.Individuals.OrderByDescending(populacja => populacja.Fitness).Take(5);
+            var top = fresh.Individuals.OrderByDescending(fresh => fresh.Fitness).Take(5);
 
         }
     }
